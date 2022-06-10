@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:14:02 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/10 10:43:04 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/10 10:49:34 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ int	ft_printf(const char *, ...)
 	
 }
 
-int main(int argc, char const *argv[])
+int	main(int argc, char const *argv[])
 {
-	/* code */
-	return 0;
+	return (0);
 }
+//red triangle a line or group of lines  was delete. Blue: a line was modified.
+//green: a line was added
