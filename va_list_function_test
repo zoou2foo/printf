@@ -10,7 +10,7 @@ int     printf(const char *format, ...)
         char *substring = strstr(format, "Jacob");
         if (substring != format) return 0;
 
-//now that'd the part that I need to understand
+//now that's the part that I need to understand
         va_start (args, format);
         done = vfprintf (stdout, format, args);
         va_end (args);
