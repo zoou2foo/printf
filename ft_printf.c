@@ -6,13 +6,13 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:14:02 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/13 09:11:11 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/13 12:54:36 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *, ...)
+int	ft_printf(const char *format, ...)
 {
 
 }

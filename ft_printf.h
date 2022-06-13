@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:22:49 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/10 10:32:42 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/13 12:52:32 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 //mettre les fonctions utilisées ci-bas...
 
-typedef struct s_list //pour printf probablement va_start et cie
+typedef struct s_list //pour printf probablement va_start et cie ou à ne pas faire?
 {
 	void				*content;
 	struct s_list *next;
