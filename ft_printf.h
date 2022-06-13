@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:22:49 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/13 12:52:32 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/13 18:46:50 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,13 @@
 # define FT_PRINTF_H
 
 # include <unistd.h>
-# include <string.h>
+# include <stdlib.h>
 # include <stdarg.h>
 # include <stdio.h>
 
-//mettre les fonctions utilisées ci-bas...
-
-typedef struct s_list //pour printf probablement va_start et cie ou à ne pas faire?
-{
-	void				*content;
-	struct s_list *next;
-}						t_list;
-
-//t_list ajouté après
-
+void	ft_putchar(char c, int *len);
+/*void	ft_putnbr(int nb, int *len);
+void	ft_putstr(char *str, int *len);
+void	ft_puthex(int nb, int *len);*/
 
 #endif
