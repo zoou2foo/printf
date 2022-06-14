@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:14:02 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/14 11:46:14 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/14 12:00:21 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	ft_print_machin(const char *str, va_list params, int *len)
 	if (*str == 'd' || *str == 'i')
 		ft_putnbr(va_arg(params, int), len);
 	if (*str == 's')
-		ft_putstr(va_arg(params, int), len);
+		ft_putstr(va_arg(params, char *), len);
+	if (*str == '%')
+		ft_putchar(va_arg(params, int), len); //nah I don't think it can work.
 }
 
 int	ft_printf(const char *format, ...)
