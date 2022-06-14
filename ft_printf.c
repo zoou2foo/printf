@@ -6,9 +6,12 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:14:02 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/14 12:00:21 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/14 15:07:53 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//%s: I need to send a char * as the type, otherwise segfault. It goes to the
+//address of the pointer to get the string.
 
 #include "ft_printf.h"
 
@@ -20,8 +23,13 @@ void	ft_print_machin(const char *str, va_list params, int *len)
 		ft_putnbr(va_arg(params, int), len);
 	if (*str == 's')
 		ft_putstr(va_arg(params, char *), len);
-	if (*str == '%')
-		ft_putchar(va_arg(params, int), len); //nah I don't think it can work.
+	if (*str == 'u')
+		ft_putnbr(va_arg(params, int), len);
+	if (*str == 'x')
+		ft_puthex(va_arg(params, int), len);
+	if (*str == 'X')
+		ft_puthex(va_arg(params, int), len);
+		
 }
 
 int	ft_printf(const char *format, ...)
@@ -71,5 +79,14 @@ int	main()
 	printf("Flag s\n");
 	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %s\n", str));
 	printf("J'ai %d caractères\n", printf("REAL: %s\n", str));
+	printf("Flag u\n");
+	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %u\n", b));
+	printf("J'ai %d caractères\n", printf("REAL: %u\n", b));
+	printf("Flag x\n");
+	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %x\n", c));
+	printf("J'ai %d caractères\n", printf("REAL: %x\n", c));
+	printf("Flag X\n");
+	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %X\n", c));
+	printf("J'ai %d caractères\n", printf("REAL: %X\n", c));
 	return (0);
 }
