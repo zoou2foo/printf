@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:21:04 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/13 18:43:54 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/13 20:32:11 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_putchar(char c, int *len)
 	(*len)++;
 }
 
-/*
 void	ft_putnbr(int nb, int *len)
 {
 	if (nb <= -2147483647)
@@ -28,18 +27,18 @@ void	ft_putnbr(int nb, int *len)
 	}
 	if (nb < 0)
 	{
-		ft_putchar('-');
+		ft_putchar('-', len);
 		nb = -nb;
 	}
 	if (nb > 9)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putnbr(nb / 10, len);
+		ft_putnbr(nb % 10, len);
 	}
 	else
-		ft_putchar(nb + 48);
+		ft_putchar(nb + 48, len);
 }
-
+/*
 void	ft_putstr(char *str, int *len)
 {
 	int	i;
@@ -47,7 +46,7 @@ void	ft_putstr(char *str, int *len)
 	i = 0;
 	while (str[i] != '\0')
 	{	
-		ft_putchar(str[i]);
+		ft_putchar(str[i], len);
 		i++;
 	}
 }
