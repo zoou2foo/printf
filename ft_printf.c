@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:14:02 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/15 10:16:04 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/15 10:39:39 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	main()
 	a = -2147483648;
 	b = 10;
 	c = 'c';
-	d = 17;
+	d = 'j';
 	str2 = NULL;
 	printf("Flag x\n");
 	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %x\n", d));
