@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:14:02 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/14 20:33:17 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/15 09:06:22 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ void	ft_print_machin(const char *str, va_list params, int *len)
 	if (*str == 'u')
 		ft_putnbr(va_arg(params, int), len);
 	if (*str == 'x' || *str == 'X')
-		ft_puthex(va_arg(params, int), len);
-		
+		ft_puthex((unsigned long)va_arg(params, int), len);
 }
 
 int	ft_printf(const char *format, ...)
