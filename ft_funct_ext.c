@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:21:04 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/23 09:11:23 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/23 12:42:56 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ void	ft_puthex(unsigned long nb, int *len)
 		ft_putchar(nb + 48, len);
 	}
 	else
-		ft_putchar((nb - 10) + 'a', len);
+		ft_putchar(nb - 10 + 'a', len);
 }
 //oubli pas pour 2e if il faut additioner à '0' ou 48
