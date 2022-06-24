@@ -6,13 +6,13 @@
 #    By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/09 09:25:08 by vjean             #+#    #+#              #
-#    Updated: 2022/06/10 10:11:51 by vjean            ###   ########.fr        #
+#    Updated: 2022/06/24 12:28:31 by vjean            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = libftprintf.a
 
-SRCS = #les fonctions à mettre ici. Pas oublier que les lignes se terminent par /
+SRCS = ft_funct_ext.c ft_printf.c \
 
 CC = gcc #le compilateur à utiliser
 
@@ -31,8 +31,9 @@ OBJS = $(SRCS:%c=%o) #ojets égal la variable des sources (dont les fonctions de
 #BONUS_OBJS = $(BONUS:.c=.o) même principe que OBJS
 
 all: $(NAME) #j'appelle le nom de ma variable
+
 $(NAME): $(OBJS) #ma variable est dépendante de mes objets
-	ar rcs $(NAME) $(OBJS) 
+	$(AR) $(NAME) $(OBJS) 
 #recette qu'elle doit effectuer.
 clean:
 	$(RM) $(OBJS)
@@ -44,6 +45,6 @@ fclean: clean
 re: fclean all
 
 #bonus: $(OBJS) $(BONUS_OBJS)
-				$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
+#$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY: all clean fclean #re bonus //a recipe to be make as I have a specific request

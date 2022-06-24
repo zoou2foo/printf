@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:14:02 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/24 12:05:00 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/24 12:08:31 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_printf(const char *format, ...)
 	return (len);
 }
 
-int	main()
+/*int	main()
 {
 	int		a;
 	int		b;
@@ -101,3 +101,4 @@ int	main()
 	printf("J'ai %d caractères\n", printf("REAL: %X\n", d));
 	return (0);
 }
+*/
