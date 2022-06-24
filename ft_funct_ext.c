@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:21:04 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/23 15:49:39 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/24 09:11:15 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ void	ft_putstr(char *str, int *len)
 	}
 }
 
-void	ft_puthex(unsigned long nb, char *str, int *len)
+void	ft_puthex(unsigned long nb, char str, int *len)
 {
 	if (nb >= 16)
 	{
-		ft_puthex(nb / 16, len);
-		ft_puthex(nb % 16, len);
+		ft_puthex(nb / 16, str, len);
+		ft_puthex(nb % 16, str, len);
 		return ;
 	}
 	if (nb <= 9)
@@ -65,11 +65,12 @@ void	ft_puthex(unsigned long nb, char *str, int *len)
 		ft_putchar(nb + 48, len);
 	}
 	else
-		if (str == 'x' || str == 'X')
-		{
+	{
+		if (str == 'x' || str == 'p')
 			ft_putchar(nb - 10 + 'a', len);
+		if (str == 'X')
 			ft_putchar(nb - 10 + 'A', len);
-		}
+	}
 }
 //return dans le premier 'if' permet de sortir de la récursivité.
 //Autre possibilité: voir ft_puthextake2

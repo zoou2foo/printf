@@ -12,6 +12,11 @@ void	ft_puthex(unsigned long nb, int *len)
 			ft_putchar(nb + 48, len);
 		}
 		else
-			ft_putchar(nb - 10 + 'a', len); 
+		{
+			if (str == 'x' || str == 'p')
+				ft_putchar(nb - 10 + 'a', len);
+			if (str == 'X')
+				ft_putchar(nb - 10 + 'A', len);
+		} 
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:14:02 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/23 15:17:59 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/24 11:25:46 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,15 @@ void	ft_print_machin(const char *str, va_list params, int *len)
 	if (*str == 's')
 		ft_putstr(va_arg(params, char *), len);
 	if (*str == 'u')
-		ft_putnbr(va_arg(params, int), len);
+		ft_puthex((unsigned int)va_arg(params, int), *str, len);
+	if (*str == 'p')
+	{	
+		*len += 2;
+		write(1, "0x", 2);
+		ft_puthex(va_arg(params, unsigned long), *str, len);
+	}
 	if (*str == 'x' || *str == 'X')
-		ft_puthex((unsigned long)va_arg(params, int), len);
+		ft_puthex(va_arg(params, unsigned long), *str, len);
 }
 
 int	ft_printf(const char *format, ...)
@@ -64,12 +70,9 @@ int	main()
 	c = 'c';
 	d = 42;
 	str2 = NULL;
-	printf("Flag x\n");
-	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %x\n", d));
-	printf("J'ai %d caractères\n", printf("REAL: %x\n", d));
-	printf("Flag X\n");
-	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %X\n", d));
-	printf("J'ai %d caractères\n", printf("REAL: %X\n", d));
+	printf("Flag u\n");
+	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %u\n", b));
+	printf("J'ai %d caractères\n", printf("REAL: %u\n", b));
 	return (0);
 }
 /*printf("Flag c\n");
@@ -84,6 +87,12 @@ int	main()
 	printf("Flag s\n");
 	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %s\n", str));
 	printf("J'ai %d caractères\n", printf("REAL: %s\n", str));
-	printf("Flag u\n");
-	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %u\n", b));
-	printf("J'ai %d caractères\n", printf("REAL: %u\n", b)); */
+	printf("Flag x\n");
+	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %x\n", d));
+	printf("J'ai %d caractères\n", printf("REAL: %x\n", d));
+	printf("Flag p\n");
+	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %p\n", &b));
+	printf("J'ai %d caractères\n", printf("REAL: %p\n", &b));
+	printf("Flag X\n");
+	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %X\n", d));
+	printf("J'ai %d caractères\n", printf("REAL: %X\n", d)); */
