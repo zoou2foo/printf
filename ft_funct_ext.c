@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:21:04 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/24 12:36:54 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/24 12:50:19 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,3 @@ void	ft_puthex(unsigned long nb, char str, size_t base, int *len)
 			ft_putchar(nb - 10 + 'A', len);
 	}
 }
-//return dans le premier 'if' permet de sortir de la récursivité.
-//Autre possibilité: voir ft_puthextake2

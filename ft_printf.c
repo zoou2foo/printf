@@ -6,16 +6,13 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:14:02 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/24 12:08:31 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/24 13:09:13 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//%s: I need to send a char * as the type, otherwise segfault. It goes to the
-//address of the pointer to get the string.
-
 #include "ft_printf.h"
 
-void	ft_print_machin(const char *str, va_list params, int *len)
+void	ft_print_spec(const char *str, va_list params, int *len)
 {
 	if (*str == 'c')
 		ft_putchar(va_arg(params, int), len);
@@ -60,45 +57,3 @@ int	ft_printf(const char *format, ...)
 	va_end(params);
 	return (len);
 }
-
-/*int	main()
-{
-	int		a;
-	int		b;
-	int		d;
-	char	c;
-	char	str[] = "pew pew madafakas";
-	char	*str2;
-
-	a = -2147483648;
-	b = 10;
-	c = 'c';
-	d = 42;
-	str2 = NULL;
-	printf("Flag %%\n");
-	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %%\n"));
-	printf("J'ai %d caractères\n", printf("REAL: %%\n"));
-	printf("Flag c\n");
-	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %c\n", c));
-	printf("J'ai %d caractères\n", printf("REAL: %c\n", c));
-	printf("Flag d\n");
-	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %d\n", a));
-	printf("J'ai %d caractères\n", printf("REAL: %d\n", a));
-	printf("Flag i\n");
-	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %i\n", d));
-	printf("J'ai %d caractères\n", printf("REAL: %i\n", d));
-	printf("Flag s\n");
-	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %s\n", str));
-	printf("J'ai %d caractères\n", printf("REAL: %s\n", str));
-	printf("Flag x\n");
-	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %x\n", d));
-	printf("J'ai %d caractères\n", printf("REAL: %x\n", d));
-	printf("Flag p\n");
-	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %p\n", &b));
-	printf("J'ai %d caractères\n", printf("REAL: %p\n", &b));
-	printf("Flag X\n");
-	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %X\n", d));
-	printf("J'ai %d caractères\n", printf("REAL: %X\n", d));
-	return (0);
-}
-*/
