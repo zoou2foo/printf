@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:21:04 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/24 09:11:15 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/24 11:53:12 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ void	ft_putstr(char *str, int *len)
 	}
 }
 
-void	ft_puthex(unsigned long nb, char str, int *len)
+void	ft_puthex(unsigned long nb, char str, size_t base, int *len)
 {
-	if (nb >= 16)
+	if (nb >= base)
 	{
-		ft_puthex(nb / 16, str, len);
-		ft_puthex(nb % 16, str, len);
+		ft_puthex(nb / base, str, base, len);
+		ft_puthex(nb % base, str, base, len);
 		return ;
 	}
 	if (nb <= 9)

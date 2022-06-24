@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:14:02 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/24 11:25:46 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/24 12:05:00 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,20 @@ void	ft_print_machin(const char *str, va_list params, int *len)
 	if (*str == 's')
 		ft_putstr(va_arg(params, char *), len);
 	if (*str == 'u')
-		ft_puthex((unsigned int)va_arg(params, int), *str, len);
+		ft_puthex((unsigned int)va_arg(params, int), *str, 10, len);
 	if (*str == 'p')
 	{	
 		*len += 2;
 		write(1, "0x", 2);
-		ft_puthex(va_arg(params, unsigned long), *str, len);
+		ft_puthex(va_arg(params, unsigned long), *str, 16, len);
 	}
 	if (*str == 'x' || *str == 'X')
-		ft_puthex(va_arg(params, unsigned long), *str, len);
+		ft_puthex(va_arg(params, unsigned long), *str, 16, len);
+	if (*str == '%')
+	{
+		*len += 1;
+		write(1, "%", 1);
+	}
 }
 
 int	ft_printf(const char *format, ...)
@@ -70,12 +75,10 @@ int	main()
 	c = 'c';
 	d = 42;
 	str2 = NULL;
-	printf("Flag u\n");
-	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %u\n", b));
-	printf("J'ai %d caractères\n", printf("REAL: %u\n", b));
-	return (0);
-}
-/*printf("Flag c\n");
+	printf("Flag %%\n");
+	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %%\n"));
+	printf("J'ai %d caractères\n", printf("REAL: %%\n"));
+	printf("Flag c\n");
 	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %c\n", c));
 	printf("J'ai %d caractères\n", printf("REAL: %c\n", c));
 	printf("Flag d\n");
@@ -95,4 +98,6 @@ int	main()
 	printf("J'ai %d caractères\n", printf("REAL: %p\n", &b));
 	printf("Flag X\n");
 	ft_printf("J'ai %d caractères\n", ft_printf("MIEN: %X\n", d));
-	printf("J'ai %d caractères\n", printf("REAL: %X\n", d)); */
+	printf("J'ai %d caractères\n", printf("REAL: %X\n", d));
+	return (0);
+}
