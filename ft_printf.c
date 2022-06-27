@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:14:02 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/24 13:09:13 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/27 08:14:16 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_printf(const char *format, ...)
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
-			ft_print_machin(&format[++i], params, &len);
+			ft_print_spec(&format[++i], params, &len);
 		else
 			ft_putchar(format[i], &len);
 		i++;
