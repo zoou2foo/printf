@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:14:02 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/27 08:14:16 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/29 16:32:18 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_print_spec(const char *str, va_list params, int *len)
 	{	
 		*len += 2;
 		write(1, "0x", 2);
-		ft_puthex(va_arg(params, unsigned long), *str, 16, len);
+		ft_puthex_p(va_arg(params, unsigned long), *str, 16, len);
 	}
 	if (*str == 'x' || *str == 'X')
 		ft_puthex(va_arg(params, unsigned long), *str, 16, len);
@@ -57,3 +57,27 @@ int	ft_printf(const char *format, ...)
 	va_end(params);
 	return (len);
 }
+
+int	main()
+{
+	int		a;
+	int		b;
+	int		c;
+	char	d;
+	long	e;
+	long	f;
+	char	str[] = "pew pew madafakas";
+	char	*str2;
+
+	a = INT_MIN;
+	b = INT_MAX;
+	c = 10;
+	d = 'c';
+	e = LONG_MIN;
+	f = LONG_MAX
+	str2 = NULL;
+	printf("Flag all fucked up together\n");
+	ft_printf("J'ai %d\n", ft_printf("MIEN: %c%X%s%u %i %d %%%p%x\n", d));
+	printf("J'ai %d\n", printf("REAL: %c%p%s%% % \n", c, &c, str));
+
+	return (0);

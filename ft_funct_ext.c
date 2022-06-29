@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:21:04 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/24 15:32:58 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/29 16:34:01 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_putstr(char *str, int *len)
 	}
 }
 
-void	ft_puthex(unsigned long nb, char str, size_t base, int *len)
+void	ft_puthex(unsigned int nb, char str, size_t base, int *len)
 {
 	if (nb >= base)
 	{
@@ -72,9 +72,28 @@ void	ft_puthex(unsigned long nb, char str, size_t base, int *len)
 	}
 	else
 	{
-		if (str == 'x' || str == 'p')
+		if (str == 'x')
 			ft_putchar(nb - 10 + 'a', len);
 		if (str == 'X')
 			ft_putchar(nb - 10 + 'A', len);
+	}
+}
+
+void	ft_puthex_p(unsigned long nb, char str, size_t base, int *len)
+{
+	if (nb >= base)
+	{
+		ft_puthex_p(nb / base, str, base, len);
+		ft_puthex_p(nb % base, str, base, len);
+		return ;
+	}
+	if (nb <= 9)
+	{
+		ft_putchar(nb + 48, len);
+	}
+	else
+	{
+		if (str == 'p')
+			ft_putchar(nb - 10 + 'a', len);
 	}
 }
