@@ -6,7 +6,7 @@
 #    By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/09 09:25:08 by vjean             #+#    #+#              #
-#    Updated: 2022/06/30 08:35:34 by vjean            ###   ########.fr        #
+#    Updated: 2022/06/30 12:43:15 by vjean            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,6 @@ RM = rm -f #remove the non-directory type files specified on the command line (w
 OBJS = $(SRCS:%c=%o) #ojets égal la variable des sources (dont les fonctions de sources qui se terminent en .c) et les objets sont
 #dépendants des sources.
 
-#.c=.o
-#$(CC) $(CFLAGS)
 #BONUS_OBJS = $(BONUS:.c=.o) même principe que OBJS
 
 all: $(NAME) #j'appelle le nom de ma variable
@@ -37,6 +35,9 @@ all: $(NAME) #j'appelle le nom de ma variable
 $(NAME): $(OBJS) #ma variable est dépendante de mes objets
 	$(AR) $(NAME) $(OBJS) 
 #recette qu'elle doit effectuer.
+libftprintf:
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+
 clean:
 	$(RM) $(OBJS)
 #quelles sont les variables utiles pour clean

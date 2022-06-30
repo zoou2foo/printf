@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:14:02 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/30 09:11:49 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/30 12:28:48 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,5 @@ int	ft_printf(const char *format, ...)
 	printf("J'ai %d\n", printf("REAL: %c%c%d %i %%fucking annoying\n", d, d, c, d));
 	
 
-	return (0);
+    return (0);
 }*/
