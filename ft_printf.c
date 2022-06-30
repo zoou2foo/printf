@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 10:14:02 by vjean             #+#    #+#             */
-/*   Updated: 2022/06/29 16:32:18 by vjean            ###   ########.fr       */
+/*   Updated: 2022/06/29 21:16:59 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,45 @@ int	main()
 
 	a = INT_MIN;
 	b = INT_MAX;
-	c = 10;
+	c = 0;
 	d = 'c';
 	e = LONG_MIN;
-	f = LONG_MAX
 	str2 = NULL;
-	printf("Flag all fucked up together\n");
-	ft_printf("J'ai %d\n", ft_printf("MIEN: %c%X%s%u %i %d %%%p%x\n", d));
-	printf("J'ai %d\n", printf("REAL: %c%p%s%% % \n", c, &c, str));
+	/*printf("Spec all fucking lined up\n");
+	ft_printf("J'ai %d\n", ft_printf("MIEN: %c%d%%%i%u%x%X%p%s\n", d, c, a, c, d, d, &e, str));
+	printf("J'ai %d\n", printf("REAL: %c%d%%%i%u%x%X%p%s\n", d, c, a, c, d, d, &e, str));
+	printf("\nSpec all fucking lined up and fucking mixed 1\n");
+	ft_printf("J'ai %d\n", ft_printf("MIEN: %d%%%i%u%x%X%p%s%c\n", c, a, c, d, d, &e, str, d));
+	printf("J'ai %d\n", printf("REAL: %d%%%i%u%x%X%p%s%c\n", c, a, c, d, d, &e, str, d));
+	printf("\nSpec all fucking lined up and fucking mixed 2\n");
+	ft_printf("J'ai %d\n", ft_printf("MIEN: %%%i%u%x%X%p%s%c%d\n", a, c, d, d, &e, str, d, c));
+	printf("J'ai %d\n", printf("REAL: %%%i%u%x%X%p%s%c%d\n", a, c, d, d, &e, str, d, c));
+	printf("\nSpec all fucking lined up and fucking mixed 3\n");
+	ft_printf("J'ai %d\n", ft_printf("MIEN: %i%u%x%X%p%s%c%d%%\n", c, c, d, d, &e, str, d, c));
+	printf("J'ai %d\n", printf("REAL: %i%u%x%X%p%s%c%d%%\n", c, c, d, d, &e, str, d, c));
+	printf("\nSpec all fucking lined up and fucking mixed 4\n");
+	ft_printf("J'ai %d\n", ft_printf("MIEN: %u%x%X%p%s%c%d%%%i\n", c, d, d, &e, str, d, c, c));
+	printf("J'ai %d\n", printf("REAL: %u%x%X%p%s%c%d%%%i\n", c, d, d, &e, str, d, c, c));
+	printf("\nSpec all fucking lined up and fucking mixed 5\n");
+	ft_printf("J'ai %d\n", ft_printf("MIEN: %x%X%p%s%c%d%%%i%u\n", d, d, &e, str, d, c, c, c));
+	printf("J'ai %d\n", printf("REAL: %x%X%p%s%c%d%%%i%u\n", d, d, &e, str, d, c, c, c));
+	printf("\nSpec all fucking lined up and fucking mixed 6\n");
+	ft_printf("J'ai %d\n", ft_printf("MIEN: %X%p%s%c%d%%%i%u%x\n", d, &e, str, d, c, c, c, d));
+	printf("J'ai %d\n", printf("REAL: %X%p%s%c%d%%%i%u%x\n", d, &e, str, d, c, c, c, d));
+	printf("\nSpec all fucking lined up and fucking mixed 7\n");
+	ft_printf("J'ai %d\n", ft_printf("MIEN: %p%s%c%d%%%i%u%x%X\n",  &e, str, d, c, c, c, d, d));
+	printf("J'ai %d\n", printf("REAL: %p%s%c%d%%%i%u%x%X\n", &e, str, d, c, c, c, d, d));
+	printf("\nSpec all fucking lined up and fucking mixed 8\n");
+	ft_printf("J'ai %d\n", ft_printf("MIEN: %s%c%d%%%i%u%x%X%p\n", str, d, c, c, c, d, d, &e));
+	printf("J'ai %d\n", printf("REAL: %s%c%d%%%i%u%x%X%p\n", str, d, c, c, c, d, d, &e));
+	
+	printf("\nSpec all fucking mixed up 1\n");
+	ft_printf("J'ai %d\n", ft_printf("MIEN: %c%c%d %i %%fucking annoying\n", d, d, c, d));
+	printf("J'ai %d\n", printf("REAL: %c%c%d %i %%fucking annoying\n", d, d, c, d)); */
+	printf("\nSpec all fucking mixed up 2\n");
+	ft_printf("J'ai %d\n", ft_printf("MIEN: %%%%%%% %i %%fucking annoying\n", d, d, c, d));
+	printf("J'ai %d\n", printf("REAL: %%%%%%% %i %%fucking annoying\n", d, d, c, d));
+	
 
 	return (0);
+}

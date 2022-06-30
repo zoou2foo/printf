@@ -6,7 +6,7 @@
 #    By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/09 09:25:08 by vjean             #+#    #+#              #
-#    Updated: 2022/06/24 12:28:31 by vjean            ###   ########.fr        #
+#    Updated: 2022/06/29 20:02:40 by vjean            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = ft_funct_ext.c ft_printf.c \
 
 CC = gcc #le compilateur à utiliser
 
-CFLAG = -Wall -Wextra -Werror #les flags à ajouter pour la compilation
+CFLAGS = -Wall -Wextra -Werror #les flags à ajouter pour la compilation
 
 AR = ar rcs #pour créer et maintenir les archives des fichiers. r: insert the files member into archive (wit R eplacement).
 #s: write an object-file index into the archive, or update an existing one, even if no other change is made to the archive(like ranlib)
@@ -47,4 +47,4 @@ re: fclean all
 #bonus: $(OBJS) $(BONUS_OBJS)
 #$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
 
-.PHONY: all clean fclean #re bonus //a recipe to be make as I have a specific request
+.PHONY: all clean fclean re #bonus //a recipe to be make as I have a specific request
