@@ -20,7 +20,7 @@ void	ft_putchar(char c, int *len)
 
 void	ft_putnbr(int nb, int *len)
 {
-	if (nb <= -2147483647)
+	if (nb == -2147483648)
 	{
 		write(1, "-2147483648", 11);
 		*len += 11;
